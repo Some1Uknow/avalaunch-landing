@@ -12,22 +12,22 @@ const messages: ChatMessage[] = [
   {
     role: "user",
     label: "Launch brief",
-    text: "We need an Avalanche L1 for a permissioned payments network.",
+    text: "We need an Avalanche L1 for a permissioned payments network with controlled validators.",
   },
   {
     role: "assistant",
     label: "LaunchOps",
-    text: "Recommended path: dedicated Avalanche L1. I am generating the rollout plan.",
+    text: "Recommended path: dedicated Avalanche L1. I can generate the rollout plan and set up validators and relayers.",
   },
   {
     role: "user",
     label: "Requirements",
-    text: "Also check validators, relayers, and cross-chain messaging before testnet.",
+    text: "Can you also handle validator setup, relayers, and launch checks before testnet?",
   },
   {
     role: "assistant",
     label: "LaunchOps",
-    text: "Done. You get a launch plan, pre-launch checks, and a list of what still needs fixing before launch.",
+    text: "Yes. I can launch the L1, prepare validator and relayer setup, run pre-launch checks, and show exactly what is still blocking launch.",
   },
 ];
 
