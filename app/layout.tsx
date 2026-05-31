@@ -20,7 +20,7 @@ const pixel = Silkscreen({
 });
 
 export const metadata: Metadata = {
-  title: "Avalanche LaunchOps Copilot",
+  title: "Avalaunch - Launch L1s instantly",
   description:
     "The launch control layer for Avalanche L1 teams. Plan the chain, validate the environment, monitor the moving parts, and ship a grant-ready launch story.",
 };
