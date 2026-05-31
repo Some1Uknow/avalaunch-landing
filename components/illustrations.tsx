@@ -10,7 +10,7 @@ export function CommandCenterIllustration() {
       <svg viewBox="0 0 560 320" role="img" aria-label="Launch control center illustration">
         <rect className="svg-shell" x="34" y="26" width="492" height="268" rx="18" />
         <rect className="svg-screen" x="68" y="58" width="424" height="204" rx="14" />
-        <path className="svg-grid" d="M126 58V262 M214 58V262 M302 58V262 M390 58V262" />
+        <path className="svg-grid" d="M209 58V262 M351 58V262" />
         <path className="svg-grid" d="M68 108H492 M68 158H492 M68 208H492" />
         <path className="svg-flow" d="M118 206 C144 126 198 112 226 130 C258 150 276 188 314 174 C354 160 384 116 446 110" />
         <path className="svg-flow alt" d="M116 220 C150 244 196 234 232 212 C272 186 318 130 358 134 C400 138 424 160 456 198" />
@@ -19,16 +19,16 @@ export function CommandCenterIllustration() {
         <circle className="svg-node" cx="314" cy="174" r="7" />
         <circle className="svg-node light" cx="446" cy="110" r="7" />
         <circle className="svg-node" cx="456" cy="198" r="6" />
-        <text className="svg-label" x="92" y="92">
-          plan
+        <text className="svg-label" x="139" y="92" textAnchor="middle" dominantBaseline="middle">
+          BRIEF
         </text>
-        <text className="svg-label" x="226" y="92">
-          validate
+        <text className="svg-label" x="280" y="92" textAnchor="middle" dominantBaseline="middle">
+          PLAN
         </text>
-        <text className="svg-label" x="370" y="92">
-          operate
+        <text className="svg-label" x="421" y="92" textAnchor="middle" dominantBaseline="middle">
+          CHECKS
         </text>
-        <text className="svg-copy" x="92" y="236">
+        <text className="svg-copy" x="280" y="236" textAnchor="middle" dominantBaseline="middle">
           relayer · validators · rpc · explorer
         </text>
       </svg>
@@ -44,14 +44,14 @@ export function TerminalOrbitIllustration() {
         <path className="svg-ring" d="M170 210 C170 118 350 118 350 210 C350 302 170 302 170 210 Z" />
         <path className="svg-flow" d="M170 210 C170 118 350 118 350 210 C350 302 170 302 170 210 Z" />
         <circle className="svg-node light" cx="170" cy="210" r="8" />
-        <circle className="svg-node" cx="260" cy="120" r="8" />
+        <circle className="svg-node" cx="260" cy="118" r="8" />
         <circle className="svg-node light" cx="350" cy="210" r="8" />
-        <circle className="svg-node" cx="260" cy="300" r="8" />
-        <text className="svg-label" x="212" y="214">
-          control loop
+        <circle className="svg-node" cx="260" cy="302" r="8" />
+        <text className="svg-label" x="260" y="210" textAnchor="middle" dominantBaseline="middle">
+          CONTROL LOOP
         </text>
-        <text className="svg-copy" x="184" y="342">
-          brief → launch plan → checks
+        <text className="svg-copy" x="260" y="342" textAnchor="middle" dominantBaseline="middle">
+          BRIEF → LAUNCH PLAN → CHECKS
         </text>
       </svg>
     </Frame>
@@ -70,11 +70,11 @@ export function HealthMeshIllustration() {
         <circle className="svg-node" cx="412" cy="116" r="8" />
         <rect className="svg-screen" x="94" y="92" width="118" height="40" rx="10" />
         <rect className="svg-screen" x="308" y="92" width="118" height="40" rx="10" />
-        <text className="svg-label" x="118" y="118">
-          relayer
+        <text className="svg-label" x="153" y="112" textAnchor="middle" dominantBaseline="middle">
+          RELAYER
         </text>
-        <text className="svg-label" x="326" y="118">
-          validators
+        <text className="svg-label" x="367" y="112" textAnchor="middle" dominantBaseline="middle">
+          VALIDATORS
         </text>
       </svg>
     </Frame>
@@ -93,14 +93,14 @@ export function ControlLoopIllustration() {
         <circle className="svg-node" cx="292" cy="220" r="7" />
         <circle className="svg-node light" cx="372" cy="162" r="7" />
         <circle className="svg-node" cx="372" cy="230" r="7" />
-        <text className="svg-label" x="134" y="130">
-          detect
+        <text className="svg-label" x="144" y="130" textAnchor="middle" dominantBaseline="middle">
+          DETECT
         </text>
-        <text className="svg-label" x="240" y="130">
-          diagnose
+        <text className="svg-label" x="260" y="130" textAnchor="middle" dominantBaseline="middle">
+          DIAGNOSE
         </text>
-        <text className="svg-label" x="334" y="130">
-          recover
+        <text className="svg-label" x="376" y="130" textAnchor="middle" dominantBaseline="middle">
+          RECOVER
         </text>
       </svg>
     </Frame>

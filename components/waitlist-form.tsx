@@ -36,32 +36,29 @@ export function WaitlistForm() {
 
   return (
     <form className="waitlist-card" onSubmit={onSubmit}>
-      <div className="waitlist-header">
-        <span className="waitlist-badge">Early operator access</span>
-        <p>
-          Leave your email to get the first private build and launch-readiness
-          updates.
-        </p>
-      </div>
-      <label className="field-shell">
-        <span>Email</span>
-        <input
-          aria-label="Email address"
-          autoComplete="email"
-          inputMode="email"
-          placeholder="team@company.com"
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          required
-        />
-      </label>
-      <button className="waitlist-button" disabled={isPending} type="submit">
-        {isPending ? "Saving..." : "Request access"}
-      </button>
-      <p className={`form-status ${status.kind}`}>
-        {status.message || "No spam. Only product updates and early access notes."}
-      </p>
+    <div className="waitlist-header">
+      <span className="waitlist-badge">Early access</span>
+      <p>Leave your email — we’ll send the private build + launch updates.</p>
+    </div>
+    <label className="field-shell">
+      <span>Email</span>
+      <input
+        aria-label="Email address"
+        autoComplete="email"
+        inputMode="email"
+        placeholder="team@company.com"
+        type="email"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+        required
+      />
+    </label>
+    <button className="waitlist-button" disabled={isPending} type="submit">
+      {isPending ? "Saving..." : "Join waitlist"}
+    </button>
+    <p className={`form-status ${status.kind}`}>
+      {status.message || "No spam. Just access + changelogs."}
+    </p>
     </form>
   );
 }
