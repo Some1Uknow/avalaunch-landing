@@ -2,6 +2,9 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { createClient } from "@libsql/client";
+import { loadLocalEnv } from "./load-local-env.mjs";
+
+loadLocalEnv();
 
 const databaseUrl =
   process.env.DATABASE_TURSO_DATABASE_URL ??

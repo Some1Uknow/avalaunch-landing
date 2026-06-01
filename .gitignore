@@ -21,3 +21,6 @@ docs/
 .vercel
 .env*
 !.env.example
+data/*.db
+data/*.csv
+data/waitlist.json
