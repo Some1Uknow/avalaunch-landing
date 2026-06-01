@@ -4,6 +4,7 @@ import { FormEvent, useState, useTransition } from "react";
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
+  const [companyWebsite, setCompanyWebsite] = useState("");
   const [status, setStatus] = useState<{
     kind: "idle" | "success" | "error";
     message: string;
@@ -19,7 +20,11 @@ export function WaitlistForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          companyWebsite,
+          source: "landing-page",
+        }),
       });
 
       const data = (await response.json()) as { message: string };
@@ -53,6 +58,16 @@ export function WaitlistForm() {
         required
       />
     </label>
+    <input
+      aria-hidden="true"
+      autoComplete="off"
+      name="companyWebsite"
+      onChange={(event) => setCompanyWebsite(event.target.value)}
+      tabIndex={-1}
+      type="text"
+      value={companyWebsite}
+      className="sr-only"
+    />
     <button className="waitlist-button" disabled={isPending} type="submit">
       {isPending ? "Saving..." : "Join waitlist"}
     </button>

@@ -18,3 +18,6 @@ coverage/
 out/
 .playwright-mcp/
 docs/
+.vercel
+.env*
+!.env.example

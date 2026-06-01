@@ -322,7 +322,7 @@ export default function Home() {
         <div className="site-inner footer-inner">
       
           <Image
-            src="/avalaunch_branding_white.png"
+            src="/avalaunch_branding_white.svg"
             alt="AvaLaunch"
             width={1672}
             height={941}

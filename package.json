@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "waitlist:import": "node scripts/import-waitlist-json.mjs",
+    "waitlist:export": "node scripts/export-waitlist.mjs"
   },
   "dependencies": {
+    "@libsql/client": "^0.17.3",
     "next": "^15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
