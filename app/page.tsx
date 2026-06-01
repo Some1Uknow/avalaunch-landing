@@ -154,7 +154,7 @@ export default function Home() {
         <div className="site-inner hero-grid">
           <div className="hero-copy">
             <div className="eyebrow">For teams launching Avalanche L1s</div>
-            <h1>Launch an Avalanche L1 faster.</h1>
+            <h1>Launch an Avalanche L1 in seconds.</h1>
             <p className="hero-lede">
               Paste your launch brief. Get a rollout plan, pre-launch checks,
               and a clear list of what still needs fixing before testnet or
