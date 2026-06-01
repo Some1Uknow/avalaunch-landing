@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HeroWorkflowDemo } from "@/components/hero-workflow-demo";
 import { WaitlistForm } from "@/components/waitlist-form";
 
@@ -126,8 +127,14 @@ export default function Home() {
       <header className="site-header">
         <div className="site-inner header-inner">
           <a className="brand-lockup" href="#top">
-            <span className="brand-mark" aria-hidden="true" />
-            <span className="brand-name">AVALANCHE LAUNCHOPS</span>
+            <Image
+              src="/avalaunch_branding_white.png"
+              alt="AvaLaunch"
+              width={1672}
+              height={941}
+              className="brand-lockup-image"
+              priority
+            />
           </a>
 
           <nav className="topnav" aria-label="Primary">
@@ -313,13 +320,14 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="site-inner footer-inner">
-          <div className="footer-copy">
-            <h2>Plan the launch. Run the checks. Ship with proof.</h2>
-            <a href="#waitlist" className="footer-cta">
-              Join waitlist
-            </a>
-          </div>
-          <div className="footer-mark">AVALANCHE LAUNCHOPS</div>
+      
+          <Image
+            src="/avalaunch_branding_white.png"
+            alt="AvaLaunch"
+            width={1672}
+            height={941}
+            className="footer-brand-image"
+          />
         </div>
       </footer>
     </main>

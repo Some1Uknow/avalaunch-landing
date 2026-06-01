@@ -20,9 +20,17 @@ const pixel = Silkscreen({
 });
 
 export const metadata: Metadata = {
-  title: "Avalaunch - Launch L1s instantly",
+  title: "AvaLaunch - Launch L1s instantly",
   description:
     "The launch control layer for Avalanche L1 teams. Plan the chain, validate the environment, monitor the moving parts, and ship a grant-ready launch story.",
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "1254x1254" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/favicon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({
