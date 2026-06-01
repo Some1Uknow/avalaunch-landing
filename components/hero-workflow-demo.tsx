@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type ChatMessage = {
@@ -85,25 +86,28 @@ export function HeroWorkflowDemo() {
         }
 
         for (let index = 0; index < message.text.length; index += 1) {
-          queue(() => {
-            setVisibleMessages((current) => {
-              const next = [...current];
-              const last = next[next.length - 1];
+          queue(
+            () => {
+              setVisibleMessages((current) => {
+                const next = [...current];
+                const last = next[next.length - 1];
 
-              if (!last) {
-                return current;
-              }
+                if (!last) {
+                  return current;
+                }
 
-              next[next.length - 1] = {
-                ...last,
-                text: message.text.slice(0, index + 1),
-                isTyping: index + 1 !== message.text.length,
-                isLoading: false,
-              };
+                next[next.length - 1] = {
+                  ...last,
+                  text: message.text.slice(0, index + 1),
+                  isTyping: index + 1 !== message.text.length,
+                  isLoading: false,
+                };
 
-              return next;
-            });
-          }, totalDelay + 26 * (index + 1));
+                return next;
+              });
+            },
+            totalDelay + 26 * (index + 1),
+          );
         }
 
         totalDelay += 26 * message.text.length + 900;
@@ -127,7 +131,16 @@ export function HeroWorkflowDemo() {
           <span />
           <span />
         </div>
-        <div className="chat-demo-title">LaunchOps AI</div>
+        <div className="chat-demo-title">
+          <Image
+            src="/avalaunch_branding_white.png"
+            alt="AvaLaunch"
+            width={1672}
+            height={941}
+            className="brand-lockup-image"
+            priority
+          />{" "}
+        </div>
         <div className="chat-demo-status">live</div>
       </div>
 
@@ -150,7 +163,9 @@ export function HeroWorkflowDemo() {
               ) : (
                 <>
                   {message.text}
-                  {message.isTyping ? <span className="typing-caret" aria-hidden="true" /> : null}
+                  {message.isTyping ? (
+                    <span className="typing-caret" aria-hidden="true" />
+                  ) : null}
                 </>
               )}
             </div>

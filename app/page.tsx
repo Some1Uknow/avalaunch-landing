@@ -176,7 +176,7 @@ export default async function Home() {
                 <a href="#waitlist" className="hero-cta">
                   Join waitlist
                 </a>
-                <span className="hero-waitlist-count">
+                <span className="hero-waitlist-count" style={{ marginLeft: "5px" }}>
                   {waitlistCount.toLocaleString()}+ in waitlist
                 </span>
               </div>
