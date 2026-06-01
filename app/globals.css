@@ -302,6 +302,20 @@ input {
   gap: 14px;
 }
 
+.hero-primary-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-waitlist-count {
+  color: rgba(244, 240, 232, 0.76);
+  font-size: 0.86rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 .hero-note {
   max-width: 40ch;
   margin: 0;

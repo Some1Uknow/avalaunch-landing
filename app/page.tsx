@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { getWaitlistCount } from "@/lib/waitlist-db";
 import { HeroWorkflowDemo } from "@/components/hero-workflow-demo";
 import { WaitlistForm } from "@/components/waitlist-form";
+
+export const dynamic = "force-dynamic";
 
 const metrics = [
   {
@@ -118,7 +121,15 @@ const faqs = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  let waitlistCount = 0;
+
+  try {
+    waitlistCount = await getWaitlistCount();
+  } catch (error) {
+    console.error("failed to load waitlist count", error);
+  }
+
   return (
     <main className="landing-shell">
       <div className="page-noise" aria-hidden="true" />
@@ -161,9 +172,14 @@ export default function Home() {
               mainnet.
             </p>
             <div className="hero-actions">
-              <a href="#waitlist" className="hero-cta">
-                Join waitlist
-              </a>
+              <div className="hero-primary-actions">
+                <a href="#waitlist" className="hero-cta">
+                  Join waitlist
+                </a>
+                <span className="hero-waitlist-count">
+                  {waitlistCount.toLocaleString()}+ in waitlist
+                </span>
+              </div>
               <p className="hero-note">
                 Built for founders, launch leads, and infra teams preparing an
                 Avalanche L1.

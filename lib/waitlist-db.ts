@@ -108,3 +108,15 @@ export async function ensureWaitlistSchema() {
 
   return globalThis.__waitlistSchemaReady;
 }
+
+export async function getWaitlistCount() {
+  await ensureWaitlistSchema();
+
+  const client = getWaitlistClient();
+  const result = await client.execute(`
+    select count(*) as waitlist_count
+    from waitlist_entries
+  `);
+
+  return Number(result.rows[0]?.waitlist_count ?? 0);
+}
