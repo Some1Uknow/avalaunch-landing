@@ -336,13 +336,13 @@ export default async function Home() {
 
       <footer className="site-footer">
         <div className="site-inner footer-inner">
-      
           <Image
-            src="/avalaunch_branding_white.svg"
+            src="/avalaunch_branding_white.png"
             alt="AvaLaunch"
             width={1672}
             height={941}
             className="footer-brand-image"
+            style={{ padding: "3rem" }}
           />
         </div>
       </footer>
