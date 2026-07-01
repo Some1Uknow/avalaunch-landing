@@ -43,7 +43,7 @@ export function WaitlistForm() {
     <form className="waitlist-card" onSubmit={onSubmit}>
     <div className="waitlist-header">
       <span className="waitlist-badge">Early access</span>
-      <p>Leave your email — we’ll send the private build + launch updates.</p>
+      <p>Leave your email. We’ll send the private build and launch updates.</p>
     </div>
     <label className="field-shell">
       <span>Email</span>
@@ -72,7 +72,7 @@ export function WaitlistForm() {
       {isPending ? "Saving..." : "Join waitlist"}
     </button>
     <p className={`form-status ${status.kind}`}>
-      {status.message || "No spam. Just access + changelogs."}
+      {status.message || "No spam. Product access and changelogs only."}
     </p>
     </form>
   );

@@ -7,41 +7,41 @@ export const dynamic = "force-dynamic";
 
 const metrics = [
   {
-    value: "1 launch brief",
-    label: "Instead of launch notes spread across docs, Slack, and private chats.",
+    value: "1 launch prompt",
+    label: "Describe the chain, token, validation mode, and target environment in one place.",
   },
   {
-    value: "1 rollout plan",
-    label: "With the recommended Avalanche path, task order, and ownership.",
+    value: "1 approval gate",
+    label: "Review the deployment plan before any command runs.",
   },
   {
-    value: "Pre-launch checks",
-    label: "Validators, relayers, RPC, deployments, and interchain messaging.",
+    value: "Local L1 deploys",
+    label: "Create and track a local Avalanche L1 with RPC details and logs.",
   },
   {
-    value: "1 issue list",
-    label: "A clear list of what still needs fixing before launch.",
+    value: "1 launch record",
+    label: "Keep chain ID, token, status, runs, and launch history together.",
   },
 ];
 
 const workflowSteps = [
   {
     number: "01",
-    title: "Paste the launch brief",
+    title: "Describe the L1",
     body:
-      "Describe the app, the timeline, validator rules, permissions, and interchain requirements.",
+      "Give AvaLaunch the name, token symbol, chain ID, VM, validation mode, and target environment.",
   },
   {
     number: "02",
-    title: "Get the launch plan",
+    title: "Review the plan",
     body:
-      "LaunchOps recommends the Avalanche path, maps the rollout sequence, and lists the setup work the team needs to complete.",
+      "AvaLaunch turns the brief into a deterministic launch plan and shows what will run before execution.",
   },
   {
     number: "03",
-    title: "Run pre-launch checks",
+    title: "Deploy and manage",
     body:
-      "See what passed, what failed, and what still needs fixing before testnet, partner review, or mainnet.",
+      "After approval, AvaLaunch runs the local deployment and stores the RPC, logs, status, and project record.",
   },
 ];
 
@@ -49,57 +49,57 @@ const outputs = [
   {
     title: "Launch plan",
     body:
-      "A concrete rollout plan with the recommended Avalanche setup, task order, and dependencies.",
+      "The exact config and command sequence before execution.",
   },
   {
-    title: "Pre-launch checklist",
+    title: "Deployment record",
     body:
-      "Checks for validators, relayers, RPC endpoints, deployments, and interchain messaging.",
+      "RPC URL, chain ID, token symbol, blockchain ID, subnet ID, VM ID, and status.",
   },
   {
-    title: "Issue list",
+    title: "Run history",
     body:
-      "One place to see what is still broken, why it matters, and what the team should do next.",
+      "A clear log of what ran, what passed, and what needs attention.",
   },
 ];
 
 const avalancheValue = [
-  "Helps more teams launch Avalanche L1s without building their own internal ops tooling first.",
-  "Standardizes launch workflows around validators, relayers, and ICM/ICTT instead of ad hoc runbooks.",
-  "Improves testnet and mainnet readiness for small teams that do not have deep infra capacity.",
-  "Creates reusable launch evidence for grants, ecosystem partners, and internal sign-off.",
+  "Helps builders test Avalanche L1 ideas without becoming infra operators first.",
+  "Turns scattered CLI steps, configs, RPC details, and logs into one product flow.",
+  "Creates a repeatable path from local L1 deployment to Avalanche L1 on Fuji Testnet.",
+  "Gives teams shareable launch evidence for grants, partners, and internal review.",
 ];
 
 const comparisonRows = [
   {
-    label: "Turn a launch idea into a plan",
-    manual: "Manual docs and meetings",
-    tools: "Not owned end to end",
-    launchops: "Built in",
-  },
-  {
-    label: "Keep launch tasks in one place",
-    manual: "Usually fragmented",
+    label: "Turn a chain idea into config",
+    manual: "Docs and guesswork",
     tools: "Partial",
-    launchops: "Built in",
+    avalaunch: "Built in",
   },
   {
-    label: "Check validators and relayers before launch",
-    manual: "Manual",
+    label: "Preview commands before execution",
+    manual: "Manual review",
+    tools: "Not unified",
+    avalaunch: "Built in",
+  },
+  {
+    label: "Deploy a local Avalanche L1",
+    manual: "CLI-heavy",
     tools: "Tool by tool",
-    launchops: "Built in",
+    avalaunch: "Built in",
   },
   {
-    label: "Know what is still broken",
-    manual: "Hard to track",
-    tools: "Not summarized",
-    launchops: "Built in",
+    label: "Track RPC, IDs, logs, and status",
+    manual: "Scattered",
+    tools: "Partial",
+    avalaunch: "Built in",
   },
   {
-    label: "Share launch status with reviewers and partners",
-    manual: "Ad hoc",
-    tools: "Not packaged",
-    launchops: "Built in",
+    label: "Prepare for Fuji Testnet",
+    manual: "Manual checklist",
+    tools: "Fragmented",
+    avalaunch: "Next release path",
   },
 ];
 
@@ -107,17 +107,22 @@ const faqs = [
   {
     question: "Who is this for?",
     answer:
-      "Founders, launch leads, and infra teams preparing an Avalanche L1 or deciding whether they should launch one.",
+      "Hackathon teams, app-chain founders, and infra-light builders who want to create and manage Avalanche L1s without manually coordinating every CLI step.",
   },
   {
-    question: "Does this replace AvaCloud or Builder Console?",
+    question: "Does this replace Avalanche CLI, AvaCloud, or Builder Console?",
     answer:
-      "No. Those tools provision important pieces. LaunchOps connects the planning, pre-launch checks, and launch status across them.",
+      "No. AvaLaunch is the operator layer around the launch workflow. It collects intent, previews the plan, gates execution, and tracks the resulting L1 details.",
   },
   {
-    question: "What launch workflows are included?",
+    question: "What works now?",
     answer:
-      "Launch brief intake, rollout planning, validator and relayer checks, RPC and deployment checks, and a clear issue summary before launch.",
+      "The current product supports local Avalanche L1 launch flow, launch-plan preview, approval gating, runner execution, persistence, logs, and L1 management views.",
+  },
+  {
+    question: "What is next?",
+    answer:
+      "Avalanche L1 deployment on Fuji Testnet, stronger runner hardening, hosted demo infrastructure, and public launch proof.",
   },
 ];
 
@@ -164,12 +169,12 @@ export default async function Home() {
       <section className="hero-section" id="top">
         <div className="site-inner hero-grid">
           <div className="hero-copy">
-            <div className="eyebrow">For teams launching Avalanche L1s</div>
-            <h1>Launch an Avalanche L1 in seconds.</h1>
+            <div className="eyebrow">For Avalanche L1 builders</div>
+            <h1>Launch an Avalanche L1 from a prompt.</h1>
             <p className="hero-lede">
-              Paste your launch brief. Get a rollout plan, pre-launch checks,
-              and a clear list of what still needs fixing before testnet or
-              mainnet.
+              AvaLaunch collects chain config, previews the deployment plan,
+              waits for approval, runs the Avalanche tooling, and stores the
+              RPC, logs, and launch history.
             </p>
             <div className="hero-actions">
               <div className="hero-primary-actions">
@@ -181,8 +186,8 @@ export default async function Home() {
                 </span>
               </div>
               <p className="hero-note">
-                Built for founders, launch leads, and infra teams preparing an
-                Avalanche L1.
+                Local Avalanche L1 deployment today. Fuji Testnet is the next
+                release path.
               </p>
             </div>
           </div>
@@ -210,10 +215,10 @@ export default async function Home() {
         <div className="site-inner">
           <div className="section-heading">
             <div className="section-kicker">How it works</div>
-            <h2>Simple input. Clear output.</h2>
+            <h2>Prompt in. Launch plan out.</h2>
             <p>
-              Give LaunchOps the launch brief, get the plan, run the checks,
-              and see what still needs fixing.
+              Describe the L1, review the config, approve the plan, and let
+              AvaLaunch run the deployment path.
             </p>
           </div>
 
@@ -233,9 +238,10 @@ export default async function Home() {
         <div className="site-inner">
           <div className="section-heading">
             <div className="section-kicker">What the team gets</div>
-            <h2>The actual launch artifacts.</h2>
+            <h2>The launch artifacts that matter.</h2>
             <p>
-              The outputs a launch team needs before it ships.
+              Everything a builder needs to inspect, repeat, and share the
+              launch.
             </p>
           </div>
 
@@ -254,10 +260,11 @@ export default async function Home() {
         <div className="site-inner split-grid">
           <div className="section-heading compact">
             <div className="section-kicker">Why this matters for Avalanche</div>
-            <h2>More launch discipline. Less manual launch risk.</h2>
+            <h2>Less ceremony between idea and L1.</h2>
             <p>
-              This is not generic ops software. It is shaped around the failure
-              points and setup work that show up in Avalanche L1 launches.
+              Avalanche L1s give teams custom execution, gas tokens, validation
+              rules, and isolated throughput. AvaLaunch makes the launch path
+              easier to operate.
             </p>
           </div>
 
@@ -275,10 +282,10 @@ export default async function Home() {
         <div className="site-inner">
           <div className="section-heading">
             <div className="section-kicker">Comparison</div>
-            <h2>Better than stitching launch ops together by hand.</h2>
+            <h2>Better than stitching the launch together by hand.</h2>
             <p>
-              Existing tooling provisions parts of the stack. The gap is the
-              launch workflow between them.
+              Avalanche tooling is powerful. AvaLaunch wraps the launch
+              workflow around it.
             </p>
           </div>
 
@@ -287,7 +294,7 @@ export default async function Home() {
               <div role="columnheader">Task</div>
               <div role="columnheader">Manual process</div>
               <div role="columnheader">Existing tools</div>
-              <div role="columnheader">LaunchOps</div>
+              <div role="columnheader">AvaLaunch</div>
             </div>
             {comparisonRows.map((row) => (
               <div className="comparison-row" role="row" key={row.label}>
@@ -295,7 +302,7 @@ export default async function Home() {
                 <div role="cell">{row.manual}</div>
                 <div role="cell">{row.tools}</div>
                 <div role="cell" className="accent-cell">
-                  {row.launchops}
+                  {row.avalaunch}
                 </div>
               </div>
             ))}
@@ -306,11 +313,11 @@ export default async function Home() {
       <section className="waitlist-section" id="waitlist">
         <div className="site-inner waitlist-grid">
           <div className="section-heading compact">
-            <div className="section-kicker">Waitlist</div>
-            <h2>Get early access.</h2>
+            <div className="section-kicker">Early access</div>
+            <h2>Get the private build.</h2>
             <p>
-              For teams preparing an Avalanche L1 and for partners who want to
-              follow launch workflows closely.
+              For builders preparing Avalanche L1s and teams that want a faster
+              path from prompt to running chain.
             </p>
           </div>
           <WaitlistForm />

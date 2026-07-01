@@ -12,23 +12,23 @@ type ChatMessage = {
 const messages: ChatMessage[] = [
   {
     role: "user",
-    label: "Launch brief",
-    text: "We need an Avalanche L1 for a permissioned payments network with controlled validators.",
+    label: "Launch prompt",
+    text: "Launch a local Avalanche L1 called payments-dev with PAY as gas.",
   },
   {
     role: "assistant",
-    label: "LaunchOps",
-    text: "Recommended path: dedicated Avalanche L1. I can generate the rollout plan and set up validators and relayers.",
+    label: "AvaLaunch",
+    text: "I’ll collect the config, generate the launch plan, and wait for approval before running anything.",
   },
   {
     role: "user",
     label: "Requirements",
-    text: "Can you also handle validator setup, relayers, and launch checks before testnet?",
+    text: "Use Subnet-EVM and Proof of Authority validation.",
   },
   {
     role: "assistant",
-    label: "LaunchOps",
-    text: "Yes. I can launch the L1, prepare validator and relayer setup, run pre-launch checks, and show exactly what is still blocking launch.",
+    label: "AvaLaunch",
+    text: "Plan ready: create config, deploy locally, capture RPC, chain ID, blockchain ID, subnet ID, VM ID, logs, and status.",
   },
 ];
 
@@ -121,7 +121,7 @@ export function HeroWorkflowDemo() {
     return clearAll;
   }, []);
 
-  const footerTags = useMemo(() => ["Plan", "Checks", "Issues"], []);
+  const footerTags = useMemo(() => ["Config", "Plan", "Deploy", "Manage"], []);
 
   return (
     <div className="chat-demo-shell" aria-label="Product chat demo">

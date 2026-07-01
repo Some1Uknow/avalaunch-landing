@@ -20,9 +20,9 @@ const pixel = Silkscreen({
 });
 
 export const metadata: Metadata = {
-  title: "AvaLaunch - Launch L1s instantly",
+  title: "AvaLaunch - Launch Avalanche L1s from a prompt",
   description:
-    "The launch control layer for Avalanche L1 teams. Plan the chain, validate the environment, monitor the moving parts, and ship a grant-ready launch story.",
+    "AvaLaunch is an AI operator for Avalanche L1 builders. Describe the chain, preview the launch plan, approve execution, and manage RPC details, logs, and launch history.",
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png", sizes: "1254x1254" },
